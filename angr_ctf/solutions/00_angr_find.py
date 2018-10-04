@@ -3,7 +3,7 @@ import angr
 path_to_bin = "../binaries/00_angr_find"
 
 # Create an angr project
-project = angr.Project(path_to_bin, auto_load_libs=False)
+project = angr.Project(path_to_bin)
 
 # Create the begin state starting from the entry point
 entry_state = project.factory.entry_state(args=[path_to_bin])

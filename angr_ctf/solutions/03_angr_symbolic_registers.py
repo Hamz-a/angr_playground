@@ -21,7 +21,7 @@ def try_again(state):
 
 
 # Create an angr project
-project = angr.Project(path_to_bin, auto_load_libs=False)
+project = angr.Project(path_to_bin)
 
 # Create a Symbolic BitVectors for each part of the password (32 bits per part)
 password_part0 = claripy.BVS("password_part0", 32)

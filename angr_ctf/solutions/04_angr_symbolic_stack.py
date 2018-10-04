@@ -21,7 +21,7 @@ def try_again(state):
 
 
 # Create an angr project
-project = angr.Project(path_to_bin, auto_load_libs=False)
+project = angr.Project(path_to_bin)
 
 # Create the begin state starting from address 0x08048697 (see r2 output bellow)
 # $ r2 -A 04_angr_symbolic_stack
