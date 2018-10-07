@@ -23,7 +23,7 @@ def try_again(state):
 # Create an angr project
 project = angr.Project(path_to_bin)
 
-# Create the begin state starting from address 0x08048697 (see r2 output bellow)
+# Create the begin state starting from address 0x080485fe (see r2 output bellow)
 # $ r2 -A 05_angr_symbolic_memory
 # [0x08048430]> pdf @main
 # ┌ (fcn) main 223
@@ -67,7 +67,7 @@ password_part1 = claripy.BVS("password_part1", 64)
 password_part2 = claripy.BVS("password_part2", 64)
 password_part3 = claripy.BVS("password_part3", 64)
 
-# Setup the stack manually since we're injecting the BVS on the stack in the middle of a function
+# Store the BVS in memory
 entry_state.memory.store(0xa1ba1c0, password_part0)
 entry_state.memory.store(0xa1ba1c8, password_part1)
 entry_state.memory.store(0xa1ba1d0, password_part2)
